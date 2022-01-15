@@ -1,0 +1,55 @@
+{
+  "name": "@web3-systems/multiscan-client",
+  "description": "EVM multiscan(etherscan) client library.",
+  "author": "Kames Geraghty",
+  "license": "MIT",
+  "version": "0.1.0-beta.1",
+  "homepage": "https://github.com/web3-systems/multiscan-client",
+  "bugs": {
+    "url" : "https://github.com/web3-systems/multiscan-client/issues"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "module": "dist/multiscan-client.esm.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "clean": "jest --clearCache",
+    "docs": "yarn typedoc src/index.ts --out docs"
+  },
+  "peerDependencies": {},
+  "dependencies": {
+    "@ethersproject/providers": "^5.5.1",
+    "axios": "^0.24.0",
+    "query-string": "^7.0.1"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typedoc": "^0.22.10",
+    "typedoc-plugin-markdown": "^3.11.8",
+    "typescript": "^4.5.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}
