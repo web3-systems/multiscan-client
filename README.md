@@ -101,7 +101,7 @@ import { MultiscanClient } from '@web3-systems/multiscan-client';
 
 let client: MultiscanClient;
 
-// Set API key and default client for all Etherscan API endpoints: 1,2,3,3,5
+// Set API key and default client for all Etherscan API endpoints: 1,2,3,4,5
 client = new MultiscanClient(1, 'etherscan-apikey');
 
 // Sets API key for all Polygoncanscan API endpoints: 137, 80001

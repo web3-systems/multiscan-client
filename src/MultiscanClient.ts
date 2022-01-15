@@ -46,7 +46,7 @@ class MultiscanClient {
   readonly clients: Clients = {};
 
   constructor(chainId?: number, apiKey?: string) {
-    if(chainId != null && apiKey != null) {
+    if (chainId != null && apiKey != null) {
       this.connect(chainId, apiKey);
       const service = getChainIdApiService(chainId);
       this.keys[service] = apiKey;

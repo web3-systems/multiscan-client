@@ -19,16 +19,22 @@ describe('Account', () => {
       expect(balance.toString()).not.toEqual('0');
     });
   });
-  
+
   describe('getAccountTransactions', () => {
     it('should get account balance for TEST address on mainnet', async () => {
-      const transactions = await client.getAccountTransactions(ADDRESS_TEST, {});
+      const transactions = await client.getAccountTransactions(
+        ADDRESS_TEST,
+        {}
+      );
       expect(transactions.length).not.toEqual('0');
     });
     it('should get account balance for TEST address on rinkeby', async () => {
-      const transactions = await client.getAccountTransactions(ADDRESS_TEST, {}, 4);
+      const transactions = await client.getAccountTransactions(
+        ADDRESS_TEST,
+        {},
+        4
+      );
       expect(transactions.toString()).not.toEqual('0');
     });
   });
-
 });
