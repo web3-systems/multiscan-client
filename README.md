@@ -3,9 +3,7 @@
 [![GPLv3 license](https://img.shields.io/badge/License-MIT-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 ![Build](https://github.com/web3-systems/multiscan-client/actions/workflows/main.yml/badge.svg)
 
-A multichain Etherscan/Clone API client library.
-
-The `@web3-systems/multiscan-client` was designed to interface with multiple chainId explorer endpoints. That means support for Etherscan, Polygonscan and Snowtrace mainnet/testnet API service providers. 
+The `@web3-systems/multiscan-client` [node module](https://www.npmjs.com/package/@web3-systems/multiscan-client) simplifies multi-Etherscan/Clone API reads.
 
 ### Supported Explorers
 
