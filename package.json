@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "husky": "^7.0.4",
-    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-prettier": "^8.3.0",
     "prettier": "^1.19.1",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
