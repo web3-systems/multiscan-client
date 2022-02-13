@@ -1,3 +1,7 @@
+import { AxiosInstance } from 'axios';
+
+export type Scanner = AxiosInstance;
+
 export interface BlockPagination {
   startblock?: number;
   endblock?: number;

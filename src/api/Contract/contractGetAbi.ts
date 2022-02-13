@@ -3,7 +3,7 @@ import querystring from 'query-string';
 import { isValidAddress } from '../../utils';
 import { queryEtherscanClient, isClientConnected } from '../../utils';
 
-export function contractGetAbi(client: AxiosInstance, address: string) {
+export async function contractGetAbi(client: AxiosInstance, address: string) {
   if (!isClientConnected(client)) {
     throw new Error('Etherscan Client Not Connected');
   }
@@ -15,5 +15,6 @@ export function contractGetAbi(client: AxiosInstance, address: string) {
     action: 'getabi',
     address: address,
   });
-  return queryEtherscanClient(client, query);
+
+  return await queryEtherscanClient(client, query);
 }

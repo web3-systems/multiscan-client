@@ -7,9 +7,11 @@ jobs:
   build:
     name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    env:
+      ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
     strategy:
       matrix:
-        node: ['16.x']
+        node: ['14.x']
         os: [ubuntu-latest]
 
     steps:
@@ -23,12 +25,11 @@ jobs:
 
       - name: Install deps and build (with cache)
         uses: bahmutov/npm-install@v1
-
-      - name: Lint
-        run: yarn lint
+        with:
+          useLockFile: false
 
       - name: Test
-        run: ETHERSCAN_API_KEY=${{ env.ETHERSCAN_API_KEY }} yarn test --ci --coverage --maxWorkers=2
+        run: yarn test --ci --coverage --maxWorkers=2
 
       - name: Build
         run: yarn build

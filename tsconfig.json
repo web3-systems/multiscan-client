@@ -1,6 +1,11 @@
 {
   // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
   "include": ["src", "types"],
+  "typedocOptions": {
+    "entryPoints": ["./src/index.ts"],
+    "out": "docs",
+    "readme": "DOCUMENTATION.md",
+  },
   "compilerOptions": {
     "module": "esnext",
     "lib": ["dom", "esnext"],
@@ -15,7 +20,7 @@
     "strict": true,
     // linter checks for common issues
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": true, 
     // noUnused* overlap with @typescript-eslint/no-unused-vars, can disable if duplicative
     "noUnusedLocals": true,
     "noUnusedParameters": true,
