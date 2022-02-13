@@ -1,0 +1,78 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@web3-systems/multiscan-client</title><meta name="description" content="Documentation for @web3-systems/multiscan-client"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">@web3-systems/multiscan-client</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>@web3-systems/multiscan-client</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#multichain-database" id="multichain-database" style="color: inherit; text-decoration: none;">
+  <h1>Multichain Database</h1>
+</a>
+<p><img src="https://github.com/web3-systems/multiscan-client/actions/workflows/main.yml/badge.svg" alt="CI">
+<img src="https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555" alt="TS">
+<a href="http://perso.crans.org/besson/LICENSE.html"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="GPLv3 license"></a>
+<a href="https://npmjs.org/package/@web3-systems/multiscan-client"><img src="https://img.shields.io/npm/v/@web3-systems/multiscan-client.svg" alt="Version"></a>
+<a href="https://npmjs.org/package/@web3-systems/multiscan-client"><img src="https://img.shields.io/npm/dw/@web3-systems/multiscan-client.svg" alt="Downloads/week"></a></p>
+
+<a href="#💾-installation" id="💾-installation" style="color: inherit; text-decoration: none;">
+  <h3>💾 Installation</h3>
+</a>
+<pre><code class="language-sh"><span class="hl-0">npm install @web3-systems/multiscan-client</span>
+</code></pre>
+<pre><code class="language-sh"><span class="hl-0">yarn add @web3-systems/multiscan-client</span>
+</code></pre>
+<pre><code class="language-sh"><span class="hl-0">git clone https://github.com/web3-systems/multiscan-client</span>
+</code></pre>
+
+<a href="#🏎️-nbspquickstart" id="🏎️-nbspquickstart" style="color: inherit; text-decoration: none;">
+  <h3>🏎️ &nbsp;Quickstart</h3>
+</a>
+<p>The <code>multiscan-client</code> library is built to support multiple Etherscan/Clonescan service API endpoints. Developers can connect to Etherscan, Polygonscan and Avalanche with a single instance.</p>
+<p>The <code>MultiscanClient</code> class wraps the Etherscan API.</p>
+<p>Updating function signatures with <code>chainId</code> to specify a target API endpoint.</p>
+<p><strong>Example</strong></p>
+<p><code>provider.getAccountBalance(&#39;0x000.0000&#39;)</code> </p>
+<p>is now... </p>
+<p><code>multiprovider.getAccountBalance(&#39;0x000.0000&#39;, 1);</code></p>
+<p>The function signature (<em>as you can see</em>) now consumes <code>chainId</code> in the last argument position.</p>
+<p><strong>Default Parameters</strong></p>
+<p>A new <code>MultiscanClient</code> can be initialized with <code>defaultChainId</code> and <code>apikey</code>.</p>
+
+<a href="#shared-api-keys-w-multiple-chain-ids" id="shared-api-keys-w-multiple-chain-ids" style="color: inherit; text-decoration: none;">
+  <h2>Shared API Keys w/ Multiple Chain IDs</h2>
+</a>
+<p>ChainId supported by a single API endpoint provider (e.x. 1,3,4,5) share an API key. In other words, if you connect to Etherscan Mainnet (chainId: 1) the Etherecan Rinkeby (chainId: 4) is also automatically available.</p>
+<p>To connect to a new service API provider a new API key must be supplied to the client instance - along with a chainId or provider name.</p>
+
+<a href="#initialize" id="initialize" style="color: inherit; text-decoration: none;">
+  <h2>Initialize</h2>
+</a>
+<p>Chain IDs are mapped to service provider(s).</p>
+<p>If chainId <code>1,2,3,4,5,42</code> is passed Etherscan is the default client.</p>
+<p>If chainId <code>137,8001</code> is passed Polygonscan is the default client.  </p>
+<p>If chainId <code>43114,43114</code> is passed Snowtrace is the default client.</p>
+<pre><code class="language-ts"><span class="hl-1">import</span><span class="hl-0"> { </span><span class="hl-2">MultiscanClient</span><span class="hl-0"> } </span><span class="hl-1">from</span><span class="hl-0"> </span><span class="hl-3">&#39;@web3-systems/multiscan-client&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">client</span><span class="hl-0"> = </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-6">MultiscanClient</span><span class="hl-0">(</span><span class="hl-7">1</span><span class="hl-0">, </span><span class="hl-3">&#39;etherscan-apikey&#39;</span><span class="hl-0">);</span>
+</code></pre>
+
+<a href="#multiple-connections" id="multiple-connections" style="color: inherit; text-decoration: none;">
+  <h2>Multiple Connections</h2>
+</a>
+<pre><code class="language-ts"><span class="hl-1">import</span><span class="hl-0"> { </span><span class="hl-2">MultiscanClient</span><span class="hl-0"> } </span><span class="hl-1">from</span><span class="hl-0"> </span><span class="hl-3">&#39;@web3-systems/multiscan-client&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">let</span><span class="hl-0"> </span><span class="hl-2">client</span><span class="hl-0">: </span><span class="hl-8">MultiscanClient</span><span class="hl-0">;</span><br/><br/><span class="hl-9">// Set API key and default client for all Etherscan API endpoints: 1,2,3,4,5</span><br/><span class="hl-2">client</span><span class="hl-0"> = </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-6">MultiscanClient</span><span class="hl-0">(</span><span class="hl-7">1</span><span class="hl-0">, </span><span class="hl-3">&#39;etherscan-apikey&#39;</span><span class="hl-0">);</span><br/><br/><span class="hl-9">// Sets API key for all Polygoncanscan API endpoints: 137, 80001</span><br/><span class="hl-2">client</span><span class="hl-0">.</span><span class="hl-6">setApiKey</span><span class="hl-0">(</span><span class="hl-7">137</span><span class="hl-0">, </span><span class="hl-3">&#39;polygonscan-apikey&#39;</span><span class="hl-0">);</span><br/><br/><span class="hl-9">// Get Account Balance from default MultiscanClient</span><br/><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">balanceEthereum</span><span class="hl-0"> = </span><span class="hl-1">await</span><span class="hl-0"> </span><span class="hl-2">client</span><span class="hl-0">.</span><span class="hl-6">getAccountBalance</span><span class="hl-0">(</span><span class="hl-3">&#39;0x000...000&#39;</span><span class="hl-0">);</span><br/><br/><span class="hl-9">// Get Account Balance using optional chainId parameter</span><br/><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">balancePolygon</span><span class="hl-0"> = </span><span class="hl-1">await</span><span class="hl-0"> </span><span class="hl-2">client</span><span class="hl-0">.</span><span class="hl-6">getAccountBalance</span><span class="hl-0">(</span><span class="hl-3">&#39;0x000...000&#39;</span><span class="hl-0">, </span><span class="hl-7">137</span><span class="hl-0">);</span><br/><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">balanceMumbai</span><span class="hl-0"> = </span><span class="hl-1">await</span><span class="hl-0"> </span><span class="hl-2">client</span><span class="hl-0">.</span><span class="hl-6">getAccountBalance</span><span class="hl-0">(</span><span class="hl-3">&#39;0x000...000&#39;</span><span class="hl-0">, </span><span class="hl-7">80001</span><span class="hl-0">);</span>
+</code></pre>
+
+<a href="#📖-nbspoverview" id="📖-nbspoverview" style="color: inherit; text-decoration: none;">
+  <h3>📖 &nbsp;Overview</h3>
+</a>
+<p>Coming soon...</p>
+
+<a href="#🧩-nbspexamples" id="🧩-nbspexamples" style="color: inherit; text-decoration: none;">
+  <h3>🧩 &nbsp;Examples</h3>
+</a>
+<p>Coming soon...</p>
+
+<a href="#💻-nbspdeveloper-experience" id="💻-nbspdeveloper-experience" style="color: inherit; text-decoration: none;">
+  <h3>💻 &nbsp;Developer Experience</h3>
+</a>
+<p>The package is setup using the <a href="https://tsdx.io/">TSDX zero-config CLI</a> which includes:</p>
+<ul>
+<li>Typescript</li>
+<li>Rollup</li>
+<li>Jest</li>
+<li>Prettier</li>
+<li>ESLint</li>
+</ul>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-reference"><a href="modules.html#default" class="tsd-kind-icon">default</a></li><li class="tsd-kind-class"><a href="classes/MultiscanClient.html" class="tsd-kind-icon">Multiscan<wbr/>Client</a></li><li class="tsd-kind-interface"><a href="interfaces/AccountMinedBlocksConfig.html" class="tsd-kind-icon">Account<wbr/>Mined<wbr/>Blocks<wbr/>Config</a></li><li class="tsd-kind-interface"><a href="interfaces/BlockPagination.html" class="tsd-kind-icon">Block<wbr/>Pagination</a></li><li class="tsd-kind-type-alias"><a href="modules.html#Scanner" class="tsd-kind-icon">Scanner</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li><li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li><li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
