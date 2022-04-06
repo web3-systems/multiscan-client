@@ -1,4 +1,4 @@
-📜 Multiscan Client
+📜 MultiScan Client
 ===================
 
 ![CI](https://github.com/web3-systems/multiscan-client/actions/workflows/main.yml/badge.svg)
@@ -7,7 +7,7 @@
 [![Version](https://img.shields.io/npm/v/@web3-systems/multiscan-client.svg)](https://npmjs.org/package/@web3-systems/multiscan-client)
 [![Downloads/week](https://img.shields.io/npm/dw/@web3-systems/multiscan-client.svg)](https://npmjs.org/package/@web3-systems/multiscan-client)
 
-The `@web3-systems/multiscan-client` [node module](https://www.npmjs.com/package/@web3-systems/multiscan-client) simplifies multi-Etherscan/Clone API reads.
+The `@web3-systems/multiscan-client` [node module](https://www.npmjs.com/package/@web3-systems/multiscan-client) is a MultiScan Client to fetch blockchain state from Scanner (Etherscan Clones) API endpoints.
 
 👉🏾 👉 [**API Documentation**](https://web3-systems.github.io/multiscan-client) 👈🏻 👈🏾
 

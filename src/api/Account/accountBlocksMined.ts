@@ -1,8 +1,9 @@
 import { AxiosInstance } from 'axios';
 import querystring from 'query-string';
+
+import { AccountMinedBlocksConfig } from '../../types';
 import { isValidAddress } from '../../utils';
 import { queryEtherscanClient, isClientConnected } from '../../utils';
-import { AccountMinedBlocksConfig } from '../../types';
 
 export function accountBlocksMined(
   client: AxiosInstance,

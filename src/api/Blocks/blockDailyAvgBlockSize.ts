@@ -1,5 +1,6 @@
 import { AxiosInstance } from 'axios';
 import querystring from 'query-string';
+
 import { queryEtherscanClient, isClientConnected } from '../../utils';
 
 export function blockDailyAvgBlockSize(

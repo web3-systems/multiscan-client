@@ -1,10 +1,5 @@
 import { AxiosInstance } from 'axios';
-import {
-  getEtherscanClient,
-  getChainIdApiService,
-  isValidApiService,
-} from './utils';
-import { AccountMinedBlocksConfig, BlockPagination } from './types';
+
 import {
   accountBalance,
   accountBalanceMulti,
@@ -29,7 +24,12 @@ import {
   transactionReceiptStatus,
   transactionStatus,
 } from './api/Transactions';
-
+import { AccountMinedBlocksConfig, BlockPagination } from './types';
+import {
+  getEtherscanClient,
+  getChainIdApiService,
+  isValidApiService,
+} from './utils';
 import { VALID_SERVICE_PROVIDERS } from './utils/constants';
 
 interface Clients {

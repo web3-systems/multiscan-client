@@ -1,5 +1,6 @@
 import { AxiosInstance } from 'axios';
 import querystring from 'query-string';
+
 import { isValidTransactionHash } from '../../utils';
 import { queryEtherscanClient, isClientConnected } from '../../utils';
 

@@ -1,8 +1,9 @@
 import { AxiosInstance } from 'axios';
 import querystring from 'query-string';
+
+import { BlockPagination } from '../../types';
 import { isValidAddress } from '../../utils';
 import { queryEtherscanClient, isClientConnected } from '../../utils';
-import { BlockPagination } from '../../types';
 
 export function accountERC20TransferEvents(
   client: AxiosInstance,

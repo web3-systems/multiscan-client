@@ -1,7 +1,8 @@
 import { AxiosInstance } from 'axios';
 import querystring from 'query-string';
-import { queryEtherscanClient, isClientConnected } from '../../utils';
+
 import { BlockPagination } from '../../types';
+import { queryEtherscanClient, isClientConnected } from '../../utils';
 
 export function accountTransactionInternalListByBlockRange(
   client: AxiosInstance,

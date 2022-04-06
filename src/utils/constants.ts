@@ -65,11 +65,11 @@ export const CHAINID_SERVICE_MAP: ChainIdToApi = {
   43113: 'snowtrace',
 };
 
-export const VALID_CHAIN_IDS = Object.keys(CHAINID_API_URL_MAP).map(key =>
+export const VALID_CHAIN_IDS = Object.keys(CHAINID_API_URL_MAP).map((key) =>
   parseInt(key)
 );
 export const VALID_API_URLS = Object.values(CHAINID_API_URL_MAP).map(
-  key => key
+  (key) => key
 );
 
 export const VALID_SERVICE_PROVIDERS = [

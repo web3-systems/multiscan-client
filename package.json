@@ -1,7 +1,6 @@
 {
   "name": "@web3-systems/multiscan-client",
   "description": "MultiScan (Etherscan) API Client Library",
-  "private": true,
   "author": "Kames Geraghty",
   "license": "MIT",
   "version": "0.1.0",
@@ -32,21 +31,21 @@
     "docs": "yarn typedoc --plugin typedoc-plugin-markdown --hideBreadcrumbs true --namedAnchors true --entryDocument index.md",
     "docs:html": "yarn typedoc --plugin none --out docs",
     "prepare": "husky install",
-    "_postinstall": "husky install",
+    "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
   },
-  "peerDependencies": {
-  },
+  "peerDependencies": {},
   "dependencies": {
     "@ethersproject/providers": "^5.5.1",
     "axios": "^0.24.0",
     "query-string": "^7.0.1"
   },
   "devDependencies": {
-    "husky": "^7.0.4",
     "eslint-config-prettier": "^6.0.0",
-    "prettier": "^1.19.1",
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.6.2",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
     "typedoc": "^0.22.10",

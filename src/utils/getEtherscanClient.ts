@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import getChainIdApiUrl from './getChainIdApiUrl';
 
 export function getEtherscanClient(
@@ -12,7 +13,7 @@ export function getEtherscanClient(
   });
 
   // Inject Etherscan API key to outbound Client instance request parameters.
-  instance.interceptors.request.use(config => {
+  instance.interceptors.request.use((config) => {
     config.params = {
       apikey: apiKey,
       ...config.params,

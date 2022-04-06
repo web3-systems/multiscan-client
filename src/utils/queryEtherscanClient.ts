@@ -1,6 +1,7 @@
 import { AxiosInstance } from 'axios';
-import { default as handleEtherscanResponse } from './handleEtherscanResponse';
+
 import { default as handleErrorTypes } from '../utils/handleErrorTypes';
+import { default as handleEtherscanResponse } from './handleEtherscanResponse';
 
 export async function queryEtherscanClient(
   client: AxiosInstance,
