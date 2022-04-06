@@ -26,11 +26,9 @@ describe('Account', () => {
         ADDRESS_TEST,
         {}
       );
-
-      console.log(transactions[transactions.length - 1], 'transactions');
-
       expect(transactions.length).not.toEqual('0');
     });
+
     it('should get account balance for TEST address on rinkeby', async () => {
       const transactions = await client.getAccountTransactions(
         ADDRESS_TEST,
