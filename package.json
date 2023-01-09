@@ -42,7 +42,7 @@
     "query-string": "^7.0.1"
   },
   "devDependencies": {
-    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^3.0.0",
     "husky": "^7.0.4",
     "prettier": "^2.6.2",
